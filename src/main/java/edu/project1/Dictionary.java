@@ -9,8 +9,8 @@ import java.util.Random;
 public class Dictionary {
     private List<String> listWords;
     private final String filename;
-    final int MinWordLength = 5;
-    final int MaxWordLength = 10;
+    final int minWordLength = 5;
+    final int maxWordLength = 10;
 
     public Dictionary(String filename) {
         this.filename = filename;
@@ -26,8 +26,6 @@ public class Dictionary {
     }
 
     protected String getRandomWordFromList() {
-        final int MinWordLength = 5;
-        final int MaxWordLength = 10;
         String word = listWords.get(new Random().nextInt(listWords.size()));
         while (isNotValidWord(word)) {
             word = listWords.get(new Random().nextInt(listWords.size()));
@@ -36,7 +34,7 @@ public class Dictionary {
     }
 
     protected boolean isNotValidWord(String word) {
-        return word.length() < MinWordLength || word.length() > MaxWordLength;
+        return word.length() < minWordLength || word.length() > maxWordLength;
     }
 
 }
