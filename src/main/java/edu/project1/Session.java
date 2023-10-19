@@ -2,7 +2,6 @@ package edu.project1;
 
 import java.util.Scanner;
 
-
 public class Session {
 
     private final int maxAttempts = 5;
@@ -29,7 +28,6 @@ public class Session {
     }
 
     GuessResult gameLoop(SecretWord secretWord) {
-
         secretWord.maskedAnswerArray(answer);
         Print.printInfo(this, secretWord);
         while (attempts < maxAttempts && !userWins(secretWord.getMaskedAnswer(), answer)) {
@@ -61,7 +59,7 @@ public class Session {
 
     }
 
-    private boolean isCorrectLetter(Character letter) {
+    protected boolean isCorrectLetter(Character letter) {
         return (letter >= 'a' && letter <= 'z' && !wrongUserAttempts.contains(String.valueOf(letter)));
     }
 }

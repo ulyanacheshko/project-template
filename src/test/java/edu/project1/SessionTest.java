@@ -61,6 +61,15 @@ class SessionTest {
         assertThat(expected).isEqualTo(actual);
     }
 
+    @Test
+    @DisplayName("Проверка допустимых и повторяющихся букв при вводе")
+    void correctLetterTest() {
+        char letter = 'a';
+        boolean expected = true;
+        boolean actual = session.isCorrectLetter('a');
+        assertThat(expected).isEqualTo(actual);
+    }
+
 }
 
 
