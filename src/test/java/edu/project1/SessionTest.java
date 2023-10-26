@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
 class SessionTest {
-    private final Dictionary dictionary = new Dictionary("dictionary.txt");
-    private final SecretWord secretWord = new SecretWord(dictionary.getRandomWordFromList());
+    private final SecretWord secretWord = new SecretWord("business");
     private final Session session = new Session(secretWord.getSecretWord(), 0);
 
     @DisplayName("Пользователь ввел больше одной буквы")
@@ -52,6 +51,7 @@ class SessionTest {
     @DisplayName("Проверка игры на корректный проигрыш")
     public void testDefeat() {
         String word = "business";
+
         String expected = "You lost!, word – business";
         String actual = "";
         SecretWord secretWord1 = new SecretWord("business");
