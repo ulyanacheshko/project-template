@@ -2,6 +2,7 @@ package edu.hw2.task2;
 
 public class Rectangle {
     private int width;
+
     private int height;
 
     public Rectangle(int width, int height) {
@@ -9,15 +10,19 @@ public class Rectangle {
         this.height = height;
     }
 
-    void setWidth(int width) {
-        this.width = width;
+    public Rectangle() {
+
     }
 
-    void setHeight(int height) {
-        this.height = height;
+    public final Rectangle setWidth(int width) {
+        return new Rectangle(width, this.height);
     }
 
-    double area() {
+    public final Rectangle setHeight(int height) {
+        return new Rectangle(this.width, height);
+    }
+
+    public final double area() {
         return width * height;
     }
 }
