@@ -38,7 +38,6 @@ public class Dictionary {
         }
         return word;
     }
-      
 
     protected boolean isNotValidWord(String word) {
         return word.length() < minWordLength || word.length() > maxWordLength;
