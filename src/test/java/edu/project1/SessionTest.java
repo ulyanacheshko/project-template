@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.*;
 
 class SessionTest {
-    private final Dictionary dictionary = new Dictionary("dictionary.txt");
-    private final SecretWord secretWord = new SecretWord(dictionary.getRandomWordFromList());
+    private final SecretWord secretWord = new SecretWord("business");
     private final Session session = new Session(secretWord.getSecretWord(), 0);
 
     @DisplayName("Пользователь ввел больше одной буквы")

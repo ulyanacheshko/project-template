@@ -27,11 +27,18 @@ public class Dictionary {
 
     protected String getRandomWordFromList() {
         String word = listWords.get(new Random().nextInt(listWords.size()));
-        while (isNotValidWord(word)) {
+        String validWord = word;
+        boolean noAnyValidWords =
+            listWords.stream().anyMatch(s -> validWord.length() < minWordLength || validWord.length() > maxWordLength);
+        if (noAnyValidWords) {
+            throw new IllegalArgumentException("File doesn't have valid words");
+        }
+        while (isNotValidWord(validWord)) {
             word = listWords.get(new Random().nextInt(listWords.size()));
         }
         return word;
     }
+      
 
     protected boolean isNotValidWord(String word) {
         return word.length() < minWordLength || word.length() > maxWordLength;
