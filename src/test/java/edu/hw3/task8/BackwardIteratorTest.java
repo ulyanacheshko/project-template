@@ -13,10 +13,9 @@ public class BackwardIteratorTest {
     public void backwardIteratorNextTest() {
         Collection<Integer> list= List.of(1,2,3);
         BackwardIterator<Integer> iterator = new BackwardIterator<>(list);
-        Integer response = iterator.next();
-        assertThat(response).isEqualTo(3);
-        assertThat(response).isEqualTo(2);
-        assertThat(response).isEqualTo(1);
+        assertThat(iterator.next()).isEqualTo(3);
+        assertThat(iterator.next()).isEqualTo(2);
+        assertThat(iterator.next()).isEqualTo(1);
     }
     @Test
     @DisplayName("Тест BackwardIteratorHasNext")
