@@ -15,9 +15,9 @@ public class Main {
         int rows = scanner.nextInt();
         int cols = scanner.nextInt();
         Maze maz = new Maze(rows, cols, new Cell[rows][cols]);
-        DfsMazeGenerator DFSMazeGenerator = new DfsMazeGenerator(maz);
-        DFSMazeGenerator.generateMaze();
-        Cell[][] cell = DFSMazeGenerator.getMaze();
+        DfsMazeGenerator dfsMazeGenerator = new DfsMazeGenerator(maz);
+        dfsMazeGenerator.generateMaze();
+        Cell[][] cell = dfsMazeGenerator.getMaze();
         Print.printMaze(cell);
         DfsMazeSolver dfsMazeSolver = new DfsMazeSolver(maz);
         dfsMazeSolver.solveMaze(cell);
