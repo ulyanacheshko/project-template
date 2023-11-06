@@ -6,11 +6,11 @@ import java.util.Random;
 
 @SuppressWarnings("MagicNumber")
 
-public class MazeGenerator {
+public class DfsMazeGenerator {
 
     private Maze maz;
 
-    public MazeGenerator(Maze maz) {
+    public DfsMazeGenerator(Maze maz) {
         this.maz = maz;
     }
 

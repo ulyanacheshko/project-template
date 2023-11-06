@@ -7,8 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
-public class MazeGeneratorTest {
-
+class DfsMazeSolverTest {
     protected static Stream<Arguments> mazes() {
 
         Maze maz1 = new Maze(13, 13, new Cell[13][13]);
@@ -22,18 +21,21 @@ public class MazeGeneratorTest {
         );
     }
 
-    protected boolean isGenerated(Maze maz) {
-        MazeGenerator mazeGenerator = new MazeGenerator(maz);
-        mazeGenerator.generateMaze();
-        Cell[][] generatedMaze = mazeGenerator.getMaze();
-        return generatedMaze.length != 0;
+    protected boolean isSolved(Maze maz) {
+        DfsMazeGenerator DFSMazeGenerator = new DfsMazeGenerator(maz);
+        DFSMazeGenerator.generateMaze();
+        DfsMazeSolver dfsMazeSolver = new DfsMazeSolver(maz);
+        dfsMazeSolver.solveMaze(maz.getGrid());
+        Cell[][] grid = maz.getGrid();
+
+        return grid.length != 0;
     }
 
-    @DisplayName("Cоздание лабиринта")
+    @DisplayName("Cоздание проходимого лабиринта")
     @ParameterizedTest()
     @MethodSource("mazes")
-    public void mazeGeneratorTest(Maze maz) {
-        Assertions.assertThat(isGenerated(maz)).isTrue();
+    public void mazeSolvedTest(Maze maz) {
+        Assertions.assertThat(isSolved(maz)).isTrue();
     }
 
 }

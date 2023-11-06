@@ -8,10 +8,10 @@ import static edu.project2.Cell.Type.PASSAGE;
 import static edu.project2.Cell.Type.SOLVE;
 import static edu.project2.Cell.Type.START;
 
-public class MazeSolve {
+public class DfsMazeSolver {
     private Maze maz;
 
-    public MazeSolve(Maze maz) {
+    public DfsMazeSolver(Maze maz) {
         this.maz = maz;
     }
 

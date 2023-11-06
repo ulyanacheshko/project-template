@@ -15,13 +15,13 @@ public class Main {
         int rows = scanner.nextInt();
         int cols = scanner.nextInt();
         Maze maz = new Maze(rows, cols, new Cell[rows][cols]);
-        MazeGenerator mazeGenerator = new MazeGenerator(maz);
-        mazeGenerator.generateMaze();
-        Cell[][] cell = mazeGenerator.getMaze();
+        DfsMazeGenerator DFSMazeGenerator = new DfsMazeGenerator(maz);
+        DFSMazeGenerator.generateMaze();
+        Cell[][] cell = DFSMazeGenerator.getMaze();
         Print.printMaze(cell);
-        MazeSolve mazeSolver = new MazeSolve(maz);
-        mazeSolver.solveMaze(cell);
-        cell = mazeSolver.getMaze();
+        DfsMazeSolver dfsMazeSolver = new DfsMazeSolver(maz);
+        dfsMazeSolver.solveMaze(cell);
+        cell = dfsMazeSolver.getMaze();
         Print.printMaze(cell);
     }
 }
