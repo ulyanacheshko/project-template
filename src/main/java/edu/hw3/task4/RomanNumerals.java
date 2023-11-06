@@ -2,8 +2,11 @@ package edu.hw3.task4;
 
 import java.util.HashMap;
 
-public interface RomanNumerals {
+public class RomanNumerals {
+
     @SuppressWarnings("MagicNumber")
+
+    private static final HashMap<Integer, String> h = new HashMap<Integer, String>();
     static String intToRoman(int input) {
         int num = input;
         if (num < 0 || num > 3999) {
@@ -12,7 +15,6 @@ public interface RomanNumerals {
         if (num == 0) {
             return "N";
         }
-        HashMap<Integer, String> h = new HashMap<Integer, String>();
         h.put(1, "I");
         h.put(4, "IV");
         h.put(5, "V");
