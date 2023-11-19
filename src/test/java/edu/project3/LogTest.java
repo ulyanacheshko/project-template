@@ -10,8 +10,8 @@ import org.apache.logging.log4j.Logger;
 class LogTest {
     private final static Logger LOGGER = LogManager.getLogger();
     @Test
-    @DisplayName("Test getRequestResource")
-    void TestGetRequestResource() {
+    @DisplayName("Test Log")
+    void TestGetLog() {
         List<String> stringPath =
             List.of("C:\\IdeaProjects\\project-template-main\\src\\main\\java\\edu\\project3\\nginxs_logs.txt," +
                 "C:\\IdeaProjects\\project-template-main\\src\\main\\java\\edu\\project3\\nginxs_logs2.txt");
