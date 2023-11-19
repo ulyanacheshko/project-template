@@ -46,6 +46,7 @@ public class UtilsTest {
         assertThat(IpAddresses.get("54.172.110.13")).isEqualTo(1);
         assertThat(IpAddresses.get("79.136.114.202")).isEqualTo(1);
     }
+
     @Test
     @DisplayName("Test getRequestTypes")
     void TestGetRequestTypes() {
@@ -53,6 +54,7 @@ public class UtilsTest {
         assertThat(requestTypes.get("GET")).isEqualTo(4);
         assertThat(requestTypes.get("PUT")).isEqualTo(1);
     }
+
     @Test
     @DisplayName("Test getAverageBytesResponse")
     void TestGetAverageBytesResponse() {
