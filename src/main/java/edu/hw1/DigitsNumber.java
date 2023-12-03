@@ -1,7 +1,9 @@
 package edu.hw1;
 
 public class DigitsNumber {
-    private static final int CONST_TEN = 10;
+
+    private static final int NUMBER_BREAKER = 10;
+
 
     private DigitsNumber() {
 
@@ -11,7 +13,8 @@ public class DigitsNumber {
         int count = 0;
         int num = a;
         do {
-            num /= CONST_TEN;
+            num /= NUMBER_BREAKER;
+
             count++;
         }
         while (num != 0);
